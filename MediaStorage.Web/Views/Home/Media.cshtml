@@ -1,0 +1,15 @@
+@model byte[]
+
+<img src="@Url.Action("MediaData")" />
+
+<form id="mediaDataForm" method="post">
+    <input type="hidden" name="mediaData" id="mediaData" />
+</form>
+
+@section scripts {
+    <script>
+        var mediaData = @Html.Raw(Json.Serialize(Model));
+        document.getElementById("mediaData").value = btoa(mediaData);
+        document.getElementById("mediaDataForm").submit();
+    </script>
+}

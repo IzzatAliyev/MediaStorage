@@ -1,0 +1,19 @@
+@model List<MediaStorage.Web.Models.MediaViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var media in Model)
+        {
+            <tr>
+                <td>@media.FileName</td>
+                <td><a href="@media.Url" target="_blank">@media.Url</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@model MediaStorage.Web.Models.MediaStorageViewModel
+
+<h1>Upload Media</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="mediaFile">Choose a file to upload:</label>
+        <input type="file" name="mediaFile" id="mediaFile" class="form-control-file">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@if (ViewBag.MediaUrl != null)
+{
+    <h2>Uploaded Media</h2>
+    <img src="@ViewBag.MediaUrl" />
+}
